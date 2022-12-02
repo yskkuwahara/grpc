@@ -2,12 +2,12 @@
 
 ## Python Server
 
-Preparation.
+Install packages.
 ```bash
 $ pip3 install grpcio grpcio-tools
 ```
 
-Install packages.
+Generate resources from proto definition.
 ```bash
-$ python3 -m grpc_tools.protoc -I./protos --python_out=. --grpc_python_out=. ./protos/user.proto
+$ python3 -m grpc_tools.protoc -I./protos --python_out=./servers/python --grpc_python_out=./servers/python ./protos/user.proto
 ```
