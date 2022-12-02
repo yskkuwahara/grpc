@@ -24,8 +24,8 @@ class UserService(user_pb2_grpc.UserServiceServicer):
         result = user_pb2.User()
         result.id = user["id"]
         result.name = user["name"]
-        result.status = user_pb2.User.UserStatus.Value(user["status"])
-        result.hobby_list = user["hobby_list"]
+        result.status = user_pb2.UserStatus.Value(user["status"])
+        result.hobby_list.extend(user["hobby_list"])
 
         return user_pb2.UserResponse(error=False, user=result)
 
